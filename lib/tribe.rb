@@ -1,3 +1,4 @@
+require 'colorizr'
 class Tribe
   attr_reader :name, :members
 
@@ -5,7 +6,7 @@ class Tribe
     if (details)
       @name = details[:name]
       @members = details[:members]
-      puts "Create tribe #{name}"
+      puts "Create tribe " + "#{name}".blue
     end
   end
 
@@ -16,7 +17,7 @@ class Tribe
   end
 
   def to_s
-    @name
+    @name.blue
   end
 
 

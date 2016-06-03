@@ -1,3 +1,4 @@
+require 'colorizr'
 class Jury
 
   attr_accessor :members
@@ -25,7 +26,7 @@ class Jury
 
   def report_votes(votes)
     votes.each_pair do |finalist,total_votes|
-      puts "#{finalist} got #{total_votes} votes"
+      puts "#{finalist} got " + "#{total_votes}".red + " votes"
     end
   end
 
@@ -41,7 +42,7 @@ class Jury
           return winner
         end
       end
-      puts "The winner is #{winner}"
+      puts "The winner is #{winner}".yellow
       return winner
   end
 

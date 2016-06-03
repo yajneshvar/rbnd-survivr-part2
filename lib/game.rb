@@ -11,12 +11,6 @@ class Game
 
   def immunity_challenge
     winning_tribe = @tribes.shuffle.sample
-    #remove a member from the losing tribe
-#    losing_index = @tribes.rindex {|tribe| tribe != winning_tribe}
-#    if(losing_index != nil)
-#      @tribes[losing_index].tribal_council()
-#    end
-#    return winning_tribe
   end
 
   def clear_tribes
