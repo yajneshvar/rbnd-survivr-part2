@@ -10,8 +10,9 @@ class Tribe
   end
 
   def tribal_council(opt={})
-      not_immune = @members.delete_if {|member| member == opt[:immune]}
-      not_immune.shuffle.sample
+      @members.shuffle!
+      delete_index = @members.rindex {|member| member != opt[:immune]}
+      @members.delete_at(delete_index)
   end
 
   def to_s

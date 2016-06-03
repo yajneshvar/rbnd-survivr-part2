@@ -10,7 +10,13 @@ class Game
   end
 
   def immunity_challenge
-    @tribes.shuffle.sample
+    winning_tribe = @tribes.shuffle.sample
+    #remove a member from the losing tribe
+#    losing_index = @tribes.rindex {|tribe| tribe != winning_tribe}
+#    if(losing_index != nil)
+#      @tribes[losing_index].tribal_council()
+#    end
+#    return winning_tribe
   end
 
   def clear_tribes
@@ -22,12 +28,15 @@ class Game
     @tribes.each do |tribe|
       new_members << tribe.members
     end
-    Tribe.new({members: new_members.flatten!, name: name})
+    @tribes.clear
+    merged_tribe = Tribe.new({members: new_members.flatten!, name: name})
+    @tribes << merged_tribe
+    return merged_tribe
   end
 
   def individual_immunity_challenge
     select_tribe = @tribes.sample
-    select_tribe.members.sample  
+    select_tribe.members.sample
   end
 
 end
