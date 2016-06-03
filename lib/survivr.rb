@@ -20,9 +20,6 @@ require_relative "jury"
 
 #This is where you will write your code for the three phases
 def phase_one
-  if(@borneo == nil)
-    return 8
-  end
   eliminated = []
   8.times do
     #immunity_challenge

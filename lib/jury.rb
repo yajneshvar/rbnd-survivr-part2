@@ -41,6 +41,7 @@ class Jury
           return winner
         end
       end
+      puts "The winner is #{winner}"
       return winner
   end
 
