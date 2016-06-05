@@ -44,6 +44,7 @@ def phase_two
   eliminated = []
   3.times do
     winner = @borneo.individual_immunity_challenge
+    puts "Immunity challenge winner is " + "#{winner}".red
     eliminated << @borneo.tribes[0].tribal_council(immune:winner)
   end
   eliminated.length
@@ -52,6 +53,7 @@ end
 def phase_three
   7.times do
     winner = @borneo.individual_immunity_challenge
+    puts "Immunity challenge winner is " + "#{winner}".yellow
     @jury.add_member(@borneo.tribes[0].tribal_council(immune:winner))
   end
   @jury.members.length
