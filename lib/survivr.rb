@@ -25,7 +25,7 @@ def phase_one
   8.times do
     #immunity_challenge
     winning_tribe = @borneo.immunity_challenge
-    puts "Winning tribe is #{winning_tribe}"
+    puts "Winning tribe is " + "#{winning_tribe}".pink
     losing_index = @borneo.tribes.rindex {|tribe| tribe != winning_tribe}
     if(losing_index == nil)
       if(@borneo.tribes.length > 1)

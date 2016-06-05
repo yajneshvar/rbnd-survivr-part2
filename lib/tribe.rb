@@ -17,7 +17,7 @@ class Tribe
   end
 
   def to_s
-    @name.blue
+    @name
   end
 
 
