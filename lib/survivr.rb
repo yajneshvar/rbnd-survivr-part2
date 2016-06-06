@@ -24,18 +24,10 @@ def phase_one
   eliminated = []
   8.times do
     #immunity_challenge
-    winning_tribe = @borneo.immunity_challenge
-    puts "Winning tribe is " + "#{winning_tribe}".pink
-    losing_index = @borneo.tribes.rindex {|tribe| tribe != winning_tribe}
-    if(losing_index == nil)
-      if(@borneo.tribes.length > 1)
-        return nil
-      else
-        losing_index = 0
-      end
-    end
+    losing_tribe = @borneo.immunity_challenge
+    puts "Losing tribe is " + "#{losing_tribe}".pink
     #remove a tribe member
-    eliminated << @borneo.tribes[losing_index].tribal_council()
+    eliminated << losing_tribe.tribal_council()
   end
   eliminated.length
 end

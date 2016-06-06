@@ -17,7 +17,7 @@ class Jury
         votes[contestant] = 0
       end
       @members.each do |member|
-        selected = finalists.shuffle.sample
+        selected = finalists.sample
         votes[selected] += 1
         puts "#{member} voted for #{selected}"
       end
@@ -33,15 +33,7 @@ class Jury
   def announce_winner(votes)
       most_vote = 0
       winner = nil
-
-      votes.each_pair do |finalist,total_votes|
-        if (total_votes > most_vote)
-          winner = finalist
-          most_vote = total_votes
-        elsif(total_votes == most_vote)
-          return winner
-        end
-      end
+      winner = votes.max_by{|contestant,vote| vote}.shift
       puts "The winner is #{winner}".yellow
       return winner
   end

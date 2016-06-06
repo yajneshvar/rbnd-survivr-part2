@@ -10,7 +10,7 @@ class Game
   end
 
   def immunity_challenge
-    winning_tribe = @tribes.shuffle.sample
+    winning_tribe = @tribes.sample
   end
 
   def clear_tribes
@@ -29,8 +29,7 @@ class Game
   end
 
   def individual_immunity_challenge
-    select_tribe = @tribes.sample
-    select_tribe.members.sample
+    @tribes.sample.members.sample
   end
 
 end
